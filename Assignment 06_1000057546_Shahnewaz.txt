@@ -1,0 +1,213 @@
+//Question-1
+
+import java.util.Scanner;
+public class Hometask6
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.print("Massage: ");
+    String s1 = sc.nextLine();
+    System.out.print("Number: ");
+    String s2 = sc.nextLine();
+    int m = -1;
+    String s3= s1+""+s2;
+    for(int i=0;i<s3.length()-1;i++)
+    {
+      char ch1 = s3.charAt(i);
+      char ch2 = s3.charAt(i+1);
+      if (ch1>='1' && ch1<='9' && ch2>='1' && ch2<='9')
+      {
+        int val =(ch1-'0')*10 + (ch2-'0');
+        if (val>m)
+        {
+          m=val;
+        }
+      }
+    }
+    if(m == -1)
+    {
+      m = 0;
+    }
+    System.out.print("2-Digti pin: "+m);
+  }
+}
+
+//Question-2
+
+import java.util.Scanner;
+public class Hometask6
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.print("Massage: ");
+    String s1 = sc.nextLine();
+    String s2 = "";
+    for(int i=0;i<s1.length();i++)
+    {
+      char ch = s1.charAt(i);
+      if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+      {
+        s2 += ch;
+      }
+    }
+    String result = "";
+    int vr = s2.length()-1;
+    for(int i=0;i<s1.length();i++)
+    {
+      char ch = s1.charAt(i);
+      if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+      {
+        result += s2.charAt(vr);
+        vr--;
+      }
+      else
+      {
+        result += ch;
+      }
+    }
+    System.out.print(result);
+  }
+}
+
+//Qustion-3
+
+import java.util.Scanner;
+public class Hometask6
+{
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      int max = -1;
+      String temp = "";
+      String maxStr = "";
+      System.out.println("Names of the spells:");
+      do
+      {
+        temp = sc.next();
+        if (max < temp.length())
+        {
+          max = temp.length();
+          maxStr = temp;
+        }
+      } 
+      while (!temp.equals("stop"));
+        int power = 0;
+        temp = "";
+        for (int i = 0; i < maxStr.length(); i++)
+        {
+          char ch = maxStr.charAt(i);
+          if (ch >= 'a' && ch <= 'z')
+          {
+            ch -= 32;
+            temp += ch;
+            power += (ch);
+          } 
+          else if (ch >= 'A' && ch <= 'Z')
+          {
+            temp += ch;
+            power += ch;
+          }
+        }
+        System.out.println("Largest Spell : " + temp);
+        System.out.println("Power Level : " + power);
+        sc.close();
+    }
+}
+
+//Question-4
+
+
+import java.util.Scanner;
+public class Hometask6
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Fan Massage: ");
+    String s1 = sc.nextLine();
+    int madrid = 0;
+    int city = 0;
+    boolean close = false;
+    boolean distroy = false;
+    for(int i=0;i<=s1.length()-6;i++)
+    {
+      if (s1.charAt(i)=='m' && s1.charAt(i+1)=='a' && s1.charAt(i+2)=='d' && s1.charAt(i+3)=='r' && s1.charAt(i+4)=='i' && s1.charAt(i+5)=='d' ||
+    s1.charAt(i)=='M' && s1.charAt(i+1)=='a' && s1.charAt(i+2)=='d' && s1.charAt(i+3)=='r' && s1.charAt(i+4)=='i' && s1.charAt(i+5)=='d' ||
+    s1.charAt(i)=='M' && s1.charAt(i+1)=='A' && s1.charAt(i+2)=='D' && s1.charAt(i+3)=='R' && s1.charAt(i+4)=='I' && s1.charAt(i+5)=='D')
+      {
+        madrid ++;
+      }
+    }
+    for (int i=0;i<=s1.length()-4;i++)
+    {
+      if (s1.charAt(i)=='c' && s1.charAt(i+1)=='i' && s1.charAt(i+2)=='t' && s1.charAt(i+3)=='y' ||
+    s1.charAt(i)=='C' && s1.charAt(i+1)=='i' && s1.charAt(i+2)=='t' && s1.charAt(i+3)=='y' ||
+    s1.charAt(i)=='C' && s1.charAt(i+1)=='I' && s1.charAt(i+2)=='T' && s1.charAt(i+3)=='Y')
+      {
+        city ++;
+      }
+    }
+    if (madrid>city)
+    {
+      System.out.println("Madrid supporter.");
+    }
+    else if (city>madrid)
+    {
+      System.out.println("City supporter.");
+    }
+    else
+    {
+      System.out.println("Nutral.");
+      System.out.println("Hard to read the fan sentiment.");
+    }
+    for (int i=0;i<=s1.length()-5;i++)
+    {
+      if (s1.charAt(i)=='c' && s1.charAt(i+1)=='l' && s1.charAt(i+2)=='o' && s1.charAt(i+3)=='s' && s1.charAt(i+4)=='e')
+      {
+        close = true;
+      }
+    }
+    for (int i=0;i<=s1.length()-7;i++)
+    {
+      if (s1.charAt(i)=='d' && s1.charAt(i+1)=='i' && s1.charAt(i+2)=='s' && s1.charAt(i+3)=='t' && s1.charAt(i+4)=='r' && s1.charAt(i+5)=='o' && s1.charAt(i+6)=='y')
+      {
+        distroy = true;
+      }
+    }
+    if (close)
+    {
+      System.out.println("Fan expect a close match.");
+    }
+    else if (distroy)
+    {
+      System.out.println("Fan expects a dominating victory!");
+    }
+  }
+}
+
+//Qustion-5
+
+import java.util.Scanner;
+public class Hometask6
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Fan Massage: ");
+    String s1 = sc.nextLine();
+    int i = s1.length()-1;
+    int n =0;
+      while (i>=0 && s1.charAt(i) ==' ')
+      {
+        i--;
+      }
+      while (i>=0 && s1.charAt(i) !=' ')
+      {
+        n++;
+        i--;
+      }
+    System.out.println(n);
+  }
+}

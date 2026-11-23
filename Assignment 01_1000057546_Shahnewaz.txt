@@ -1,0 +1,75 @@
+//Question-1//
+
+public class Lab1_CodingTask
+{
+  public static void main (String [] args)
+  {
+    int min, year;
+    min = 3456789;
+    year = min/(60*24*365);
+    int reamin_min = min%(60*24*365);
+    int days = reamin_min / (60*24);
+    System.out.println(year+ "year" + days+ "days");
+  }
+}
+  
+
+
+//Question-2//
+
+public class Lab1_CodingTask
+{
+  public static void main (String [] args)
+  {
+    int a=2, b=5, c=8,d;
+    d = (2*b * (c-a)/3)+7;
+    System.out.println("The ans is "+d);
+  }
+}
+
+
+//Question-3//
+
+public class Lab1_CodingTask
+{
+  public static void main (String [] args)
+  {
+    int student_id = 1000054943;
+    int last2digit = student_id % 100 ;
+    int lastDigit = last2digit % 10 ;
+    int last2nddigit = last2digit/10 ;
+    System.out.println(lastDigit+""+last2nddigit);
+  }
+}
+
+
+//Question-4//
+
+public class Lab1_CodingTask
+{
+  public static void main (String [] args)
+  {
+    int length=10 , width=13 ;
+    double diogonal= Math.sqrt((length*length)+(width*width));
+    System.out.println("The distance between two corner is "+diogonal);
+  }
+}
+
+//Question-5//
+
+public class Lab1_CodingTask
+{
+  public static void main (String [] args)
+  {
+    double a=4.5 , b=9.5 ;
+    double c= Math.sqrt((a*a)+(b*b));
+    double sinA= a/c ;
+    double sinB= b/c ;
+    double cosA= b/c ;
+    double cosB= a/c ;
+    System.out.println("Sin(A)="+sinA);
+    System.out.println("Sin(B)="+sinB);
+    System.out.println("Cos(A)="+cosA);
+    System.out.println("Cos(B)="+cosB);
+  }
+}

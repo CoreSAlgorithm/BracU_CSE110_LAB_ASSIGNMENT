@@ -1,0 +1,186 @@
+//Question-1
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Enter the number:");
+    int num = sc.nextInt();
+    if ((num%5==0)&&(num%7==0))
+      System.out.println("Invalid: Divisible by both");
+    else if (num%5==0)
+      System.out.println("Divisible by 5");
+    else if (num%7==0)
+      System.out.println("Divisible by 7");
+    else 
+      System.out.println("No");
+  }
+}
+
+//Question-2
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Enter age:");
+    int age = sc.nextInt();
+    System.out.println("Enter the Electricity Consumed:");
+    double Electricity_Consumed = sc.nextDouble();
+    if ((age<18)&&(100>=Electricity_Consumed))
+      System.out.println("Final Bill: "+(((Electricity_Consumed*15)-((Electricity_Consumed*15)*20/100)))+" Taka");
+    else if ((age<18)&&(100<Electricity_Consumed))
+      System.out.println("Final Bill: "+((((Electricity_Consumed*15)-((Electricity_Consumed*15)*20/100)))+((((Electricity_Consumed*15)-((Electricity_Consumed*15)*20/100)))*5/100))+" Taka");
+    else if (((18<=age)&&(age<=60))&&(100>=Electricity_Consumed))
+       System.out.println("Final Bill: "+(Electricity_Consumed*15)+" Taka");
+    else if (((18<=age)&&(age<=60))&&(100<Electricity_Consumed))
+      System.out.println("Final Bill: "+((Electricity_Consumed*15)+((Electricity_Consumed*15)*5/100))+" Taka");
+    else if ((age>60)&&(100>=Electricity_Consumed))
+       System.out.println("Final Bill: "+((Electricity_Consumed*15)-((Electricity_Consumed*15)*10/100))+" Taka");
+    else if ((age>60)&&(100<Electricity_Consumed))
+      System.out.println("Final Bill: "+(((Electricity_Consumed*15)-((Electricity_Consumed*15)*10/100))+(((Electricity_Consumed*15)-((Electricity_Consumed*15)*10/100))*5/100))+" Taka");
+  }
+}
+
+//Question-3
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter number: ");
+    double a = sc.nextDouble();
+    double b = sc.nextDouble();
+    double c = sc.nextDouble();
+    if ((a > b) && (a > c))
+    {
+      System.out.println(" Maximum number is "+a);
+    }
+    else if ((b > c)&&(b > a))
+    {
+      System.out.println(" Maximum number is "+b);
+    }
+    else
+    {
+      System.out.println(" Maximum number is "+c);
+    }
+    if ((a < b) && (a < c))
+    {
+      System.out.println(" Minimum number is "+a);
+    }
+    else if ((b < c)&&(b < a))
+    {
+      System.out.println(" Minimum number is "+b);
+    }
+    else
+    {
+      System.out.println(" Minimum number is "+c);
+    }
+  }
+}
+
+//Question-4
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter number: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+    if ((a==b)&&(b==c))
+    {
+      System.out.println(" This is a Equilateral triangle ");
+    }
+    else if ((a==b)||(b==c)||(c==a))
+    {
+      System.out.println(" This is a Isosceles triangle ");
+    }
+    else
+    {
+      System.out.println(" This is a Scalene triangle ");
+    }
+  }
+}
+
+//Question-5
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main (String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.print("Enter the amount the customer need to pay (Taka)");
+    int amount1 = sc.nextInt();
+    System.out.print("Enter the amount customer gave (Taka)");
+    int amount2 = sc.nextInt();
+    if (amount1<amount2)
+    {
+      int returned = (amount2-amount1);
+      System.out.println("The returned amount is "+returned+" taka.");
+      int note100 = returned /100;
+      returned = returned % 100;
+      int note50 = returned /50;
+      returned = returned % 50;
+      int note20 = returned / 20;
+      returned = returned % 20;
+      int note10 = returned / 10;
+      returned = returned % 10;
+      int coin5 = returned / 5;
+      returned = returned % 5;
+      int coin2 = returned / 2;
+      returned = returned % 2;
+      int coin1 = returned / 1;
+      returned = returned % 1;
+      System.out.println("100 tk note: "+note100);
+      System.out.println("50 tk note: "+note50);
+      System.out.println("20 tk note: "+note20);
+      System.out.println("10 tk note: "+note10);
+      System.out.println("5 tk coin: "+coin5);
+      System.out.println("2 tk coin: "+coin2);
+      System.out.println("1 tk coin: "+coin1);
+    }
+    else if (amount1==amount2)
+    {
+      System.out.print("The returned amount is 0 taka");
+    }
+    else
+    {
+      int need=(amount1-amount2);
+      System.out.print("Please pay "+need+" taka more.");
+    }
+  }
+}
+
+//Question-6
+
+import java.util.Scanner;
+public class HomeTask2
+{
+  public static void main(String [] args)
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.print("Input the 1st number:");
+      int num1 = sc.nextInt();
+    System.out.print("Input the 2nd number:");
+      int num2 = sc.nextInt();
+    System.out.print("Input the 3rd number:");
+      int num3 = sc.nextInt();
+      if ((num1==num2)&&(num2==num3))
+        System.out.println("All numbers are Equal");
+      else if ((num1!=num2)&&(num2!=num3))
+        System.out.println("All numbers are different");
+      else 
+        System.out.println("Neither all are equal or different");
+  }
+}
